@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Distribuidora Express - Pedidos y Rastreo</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- HEADER / NAVEGACIÓN -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-truck-fast"></i>
+            <span>Distribuidora <strong>ClickFood</strong></span>
+        </div>
+        <div class="team-badge">
+            <i class="fa-solid fa-users"></i> Equipo: Mariana, Laura & Yaricel
+        </div>
+        <div class="nav-actions">
+            <button id="cart-btn" class="btn-primary">
+                <i class="fa-solid fa-cart-shopping"></i> Pedido (<span id="cart-count">0</span>)
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main class="main-container">
+        
+        <!-- SECCIÓN DE PRODUCTOS -->
+        <section class="catalog-section">
+            <div class="section-header">
+                <h2>Catálogo de Alimentos al por Mayor</h2>
+                <p>Selecciona los productos para surtir tu tienda o supermercado con un solo clic.</p>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="frescos">Frescos</button>
+                <button class="filter-btn" data-filter="abarrotes">Abarrotes</button>
+                <button class="filter-btn" data-filter="bebidas">Bebidas</button>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Se llenarán dinámicamente con JS -->
+            </div>
+        </section>
+
+        <!-- SECCIÓN LATERAL (CARRITO Y RASTREO) -->
+        <aside class="sidebar-section">
+            
+            <!-- PANEL DE CARRITO -->
+            <div class="card cart-card">
+                <h3><i class="fa-solid fa-basket-shopping"></i> Tu Pedido Actual</h3>
+                <div id="cart-items" class="cart-items-container">
+                    <p class="empty-cart">El carrito está vacío.</p>
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal:</span>
+                        <span id="cart-subtotal">$0 COP</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="cart-total">$0 COP</span>
+                    </div>
+                    <button id="checkout-btn" class="btn-success" disabled>Realizar Pedido</button>
+                </div>
+            </div>
+
+            <!-- PANEL DE RASTREO DE ENTREGA -->
+            <div class="card tracking-card">
+                <h3><i class="fa-solid fa-map-location-dot"></i> Rastreo de Entrega en Vivo</h3>
+                <div id="tracking-content" class="tracking-content">
+                    <p class="no-tracking">Realiza un pedido para activar el seguimiento de ruta hacia tu tienda.</p>
+                </div>
+            </div>
+
+        </aside>
+
+    </main>
+
+    <!-- SCRIPT JS -->
+    <script src="app.js"></script>
+</body>
+</html>
